@@ -8,13 +8,24 @@ if [ -f /etc/bash/bashrc ]; then
     . /etc/bash/bashrc
 fi
 
+function pathadd()
+{
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$PATH:$1"
+    fi
+}
+
 # run site-specific config if it exists
 if [ -f ~/.bashrc.site ]; then
     source ~/.bashrc.site
 fi
 
-export PATH=~/bin:~/src/go/bin:"$PATH"
-export GOPATH=~/src/go
+pathadd "$HOME/bin"
+pathadd "$HOME/src/go/bin"
+pathadd "/sbin"
+pathadd "/usr/sbin"
+
+[ -d "$HOME/src/go" ] && export GOPATH="$HOME/src/go"
 
 unset TMP
 unset TEMP
