@@ -1,0 +1,68 @@
+# readline .inputrc
+
+# Be 8-bit clean
+set input-meta on
+set output-meta on
+
+# no bell
+set bell-style none
+
+# set emacs keybindings
+set editing-mode emacs
+
+# tab complete ignoring case
+set completion-ignore-case on
+
+# don't expand ~ in completions
+set expand-tilde off
+
+# wrap to next line instead of scrolling when line overflows
+set horizontal-scroll-mode off
+
+# append slash when completing directory names
+set mark-directories on
+
+# show list at first TAB instead of beeping
+set show-all-if-ambiguous on
+
+# only ask y/n for really big lists
+set completion-query-items 1000
+
+# ---------- keybindings
+
+# home
+"\e[1~":        beginning-of-line
+"\eOH":         beginning-of-line
+"\e[H":         beginning-of-line
+
+# end
+"\e[4~":        end-of-line
+"\e[8~":        end-of-line
+"\eOF":         end-of-line
+"\e[F":         end-of-line
+
+# page up
+"\e[5~":        beginning-of-history
+
+# page down
+"\e[6~":        end-of-history
+
+# Del
+"\e[3~":        delete-char
+
+# Ctrl-Backspace
+"\C-?":         backward-kill-word
+
+# Ctrl-Delete
+"\e[3;5~":      kill-word
+
+# Ctrl-right arrow
+"\e[5C":        forward-word
+"\e[1;5C":      forward-word
+"\eOC":         forward-word
+
+# Ctrl-left arrow
+"\e[5D":        backward-word
+"\e[1;5D":      backward-word
+"\eOd":         backward-word
+
