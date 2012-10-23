@@ -1,0 +1,7 @@
+$_layout="us"
+
+$_ignore_djgpp_null_derefs = (1)
+
+$_cdrom=""
+
+

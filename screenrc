@@ -1,0 +1,3 @@
+defscrollback 10000
+vbell off # no visual bell (use audible bell)
+

@@ -1,0 +1,19 @@
+! urxvt (rxvt-unicode)
+URxvt.saveLines: 12000
+URxvt.foreground: White
+URxvt.background: Black
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollstyle: rxvt
+URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=13
+URxvt.urgentOnBell: true
+URxvt.cursorBlink: true
+
+! xterm
+xterm*faceName: xft:Bitstream Vera Sans Mono:pixelsize=13
+xterm*background: Black
+xterm*foreground: White
+xterm*geometry: 80x25
+xterm*saveLines: 12000
+xterm*scrollBar: false
+
