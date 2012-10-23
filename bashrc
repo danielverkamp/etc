@@ -38,6 +38,8 @@ else
     export TEMP=~/temp
 fi
 
+umask 077
+
 # if not logging in interactively, stop here
 #[ -z "$PS1" ] && return
 [[ $- != *i* ]] && return
