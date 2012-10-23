@@ -13,7 +13,8 @@ if [ -f ~/.bashrc.site ]; then
     source ~/.bashrc.site
 fi
 
-export PATH=~/bin:"$PATH"
+export PATH=~/bin:~/src/go/bin:"$PATH"
+export GOPATH=~/src/go
 
 unset TMP
 unset TEMP
