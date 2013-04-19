@@ -1,0 +1,68 @@
+#!/bin/sh
+
+NOLINK=0
+uname -s | grep MINGW &>/dev/null && NOLINK=1
+
+LINK='ln -s'
+[ $NOLINK -ne 0 ] && LINK='cp -a'
+
+etc="$HOME/etc"
+
+if [ ! -d "$etc" ]; then
+    echo ERROR: Configuration directory $etc not found - exiting.
+    exit 1
+fi
+
+echo Updating dotfile links in $HOME from $etc
+
+map="
+    bash_profile:.bash_profile
+    bashrc:.bashrc
+    dosemurc:.dosemurc
+    inputrc:.inputrc
+    minttyrc:.minttyrc
+    screenrc:.screenrc
+    vimrc:.vimrc
+    Xresources:.Xresources
+    "
+
+for f in $map; do
+    src="$etc/$(echo "$f" | cut -d: -f1)"
+    dst="$HOME/$(echo "$f" | cut -d: -f2)"
+
+    if [ ! -f "$src" ]; then
+        echo ERROR: Missing source file $src - exiting.
+        exit 1
+    fi
+
+    if [ -f "$dst" -a ! -L "$dst" ]; then
+        if [ $NOLINK -ne 0 ]; then
+            dstdiff="$dst.diff"
+            diff -Naur "$dst" "$src" > $dstdiff
+            if [ $? -ne 0 ]; then
+                echo WARNING: $dst differs from $src - please merge
+                echo
+                cat "$dst.diff"
+                echo
+            fi
+        else
+            dstbak="$dst.bak"
+            echo WARNING: Destination file $dst already exists and is not a link - moving it out of the way to $dstbak.
+            mv "$dst" "$dstbak"
+        fi
+    fi
+
+    if [ -L "$dst" ]; then
+        cursrc=$(readlink -f "$dst")
+        if [ "$cursrc" != "$src" ]; then
+            dstbak="$dst.bak"
+            echo WARNING: Destination file $dst already exists and is a link to $cursrc - moving it out of the way to $dstbak.
+            mv "$dst" "$dstbak"
+        fi
+    fi
+
+    if [ ! -f "$dst" ]; then
+        echo Installing $src as $dst
+        $LINK "$src" "$dst"
+    fi
+done
