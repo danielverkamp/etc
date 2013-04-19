@@ -18,6 +18,7 @@ endif
 au BufRead,BufNewFile Make.config setfiletype make
 
 " color scheme
+set bg=dark
 :color koehler
 
 " font for gVim
@@ -30,7 +31,7 @@ syntax on
 ":set number
 
 " mouse support
-:set mouse=a
+":set mouse=a
 
 " force-enable 256 color mode
 " (TODO: only do this when TERM=~-256color)
