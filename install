@@ -22,6 +22,7 @@ map="
     inputrc:.inputrc
     minttyrc:.minttyrc
     screenrc:.screenrc
+    startxwinrc:.startxwinrc
     vimrc:.vimrc
     Xresources:.Xresources
     "

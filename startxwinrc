@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xrdb -load $HOME/.Xresources
+xterm -geometry +1+1 -n login -display :0
+
