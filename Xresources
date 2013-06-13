@@ -16,4 +16,5 @@ xterm*foreground: White
 xterm*geometry: 80x25
 xterm*saveLines: 12000
 xterm*scrollBar: false
+xterm*toolBar: false
 
