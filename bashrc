@@ -40,6 +40,9 @@ fi
 
 umask 077
 
+# enable core dumps
+ulimit -c unlimited
+
 # if not logging in interactively, stop here
 #[ -z "$PS1" ] && return
 [[ $- != *i* ]] && return
