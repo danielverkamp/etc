@@ -21,6 +21,7 @@ map="
     dosemurc:.dosemurc
     inputrc:.inputrc
     minttyrc:.minttyrc
+    plan:.plan
     screenrc:.screenrc
     startxwinrc:.startxwinrc
     vimrc:.vimrc
