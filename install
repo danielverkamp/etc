@@ -24,6 +24,7 @@ map="
     plan:.plan
     screenrc:.screenrc
     startxwinrc:.startxwinrc
+    tmux.conf:.tmux.conf
     vimrc:.vimrc
     Xresources:.Xresources
     "
