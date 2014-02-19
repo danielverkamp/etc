@@ -1,0 +1,10 @@
+[user]
+	email = daniel@drv.nu
+	name = Daniel Verkamp
+
+[color]
+	diff = auto
+	status = auto
+
+[include]
+	path = ~/.gitconfig.site
