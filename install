@@ -19,6 +19,7 @@ map="
     bash_profile:.bash_profile
     bashrc:.bashrc
     dosemurc:.dosemurc
+    gdbinit:.gdbinit
     gitconfig:.gitconfig
     inputrc:.inputrc
     minttyrc:.minttyrc
