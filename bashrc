@@ -85,9 +85,13 @@ function interactive ()
     fi
 
     # set window title in the prompt for terminals that support it
+    TITLEPS1="\\h:\\w"
     case "$TERM" in
-        xterm*|*rxvt*|screen|mingw-dumb*)
-            TITLE="\[\e]0;\\h:\\w\a\]"
+        xterm*|*rxvt*|mingw-dumb*)
+            TITLE="\[\e]0;${TITLEPS1}\a\]"
+            ;;
+        screen*)
+            TITLE="\[\e_${TITLEPS1}\e\]"
             ;;
         *)
             TITLE=""
@@ -101,6 +105,9 @@ function interactive ()
 
     PS1="\n${TITLE}${HOSTCOLOR}\\h${COLOR_RESET}${FG_WHITE}\`if [[ \$? = '0' ]]; then echo ':'; else echo '${BG_RED}!${COLOR_RESET}'; fi\`${FG_YELLOW_B}\\w\n${FG_GREEN_B}\\\$${COLOR_RESET} "
     export PS1
+
+    unset PROMPT_COMMAND
+    export PROMPT_COMMAND
 
     # executing a dir name will cd to it
     shopt -s autocd &> /dev/null
