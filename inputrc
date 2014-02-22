@@ -64,5 +64,5 @@ set completion-query-items 1000
 # Ctrl-left arrow
 "\e[5D":        backward-word
 "\e[1;5D":      backward-word
-"\eOd":         backward-word
+"\eOD":         backward-word
 
