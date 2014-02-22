@@ -10,6 +10,7 @@ URxvt.urgentOnBell: true
 URxvt.cursorBlink: true
 
 ! xterm
+xterm*termName: xterm-256color
 xterm*faceName: Bitstream Vera Sans Mono
 xterm*faceSize: 10
 xterm*renderFont: true
