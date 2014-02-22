@@ -25,6 +25,9 @@ xterm*allowBoldFonts: false
 xterm*boldColors: true
 xterm*cursorBlink: true
 
+! override Ctrl-Backspace so it sends Ctrl-W
+XTerm.VT100.translations: #override Ctrl <KeyPress> BackSpace: string(0x17)
+
 ! xterm colors
 xterm*colorBDMode: true
 xterm*colorBD: rgb:fc/fc/fc
