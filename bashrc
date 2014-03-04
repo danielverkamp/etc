@@ -7,6 +7,9 @@ fi
 if [ -f /etc/bash/bashrc ]; then
     . /etc/bash/bashrc
 fi
+if [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+fi
 
 function pathadd()
 {
