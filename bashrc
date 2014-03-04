@@ -85,29 +85,28 @@ function interactive ()
     fi
 
     # set window title in the prompt for terminals that support it
-    TITLEPS1="\\h:\\w"
+    TITLE='${HOSTNAME%%.*}:${PWD/#$HOME/~}'
     case "$TERM" in
-        xterm*|*rxvt*|mingw-dumb*)
-            TITLE="\[\e]0;${TITLEPS1}\a\]"
+        xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|mingw-dumb*)
+            PROMPT_COMMAND='echo -ne "\033]0;'$TITLE'\007"'
             ;;
         screen*)
-            TITLE="\[\e_${TITLEPS1}\e\]"
+            PROMPT_COMMAND='echo -ne "\033_'$TITLE'\033\\"'
             ;;
         *)
-            TITLE=""
+            PROMPT_COMMAND=''
             ;;
     esac
+    export PROMPT_COMMAND
+    unset TITLE
 
     # restore the original TERM if we temporarily changed it
     if [ "$TERM" = "mingw-dumb" ]; then
         TERM="dumb"
     fi
 
-    PS1="\n${TITLE}${HOSTCOLOR}\\h${COLOR_RESET}${FG_WHITE}\`if [[ \$? = '0' ]]; then echo ':'; else echo '${BG_RED}!${COLOR_RESET}'; fi\`${FG_YELLOW_B}\\w\n${FG_GREEN_B}\\\$${COLOR_RESET} "
+    PS1="\n${HOSTCOLOR}\\h${COLOR_RESET}${FG_WHITE}\`if [[ \$? = '0' ]]; then echo ':'; else echo '${BG_RED}!${COLOR_RESET}'; fi\`${FG_YELLOW_B}\\w\n${FG_GREEN_B}\\\$${COLOR_RESET} "
     export PS1
-
-    unset PROMPT_COMMAND
-    export PROMPT_COMMAND
 
     # executing a dir name will cd to it
     shopt -s autocd &> /dev/null
