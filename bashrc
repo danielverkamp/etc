@@ -88,7 +88,7 @@ function interactive ()
     fi
 
     # set window title in the prompt for terminals that support it
-    TITLE='${HOSTNAME%%.*}:${PWD/#$HOME/~}'
+    local TITLE='${HOSTNAME%%.*}:${PWD/#$HOME/~}'
     case "$TERM" in
         xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|mingw-dumb*)
             PROMPT_COMMAND='echo -ne "\033]0;'$TITLE'\007"'
@@ -101,7 +101,6 @@ function interactive ()
             ;;
     esac
     export PROMPT_COMMAND
-    unset TITLE
 
     # restore the original TERM if we temporarily changed it
     if [ "$TERM" = "mingw-dumb" ]; then
