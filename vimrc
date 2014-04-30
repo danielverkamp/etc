@@ -63,6 +63,14 @@ let &t_Co=256
 let &t_AF="\e[38;5;%dm"
 let &t_AB="\e[48;5;%dm"
 
+" fix tmux home/end keys
+if $TERM =~ '^screen-256color'
+    map <Esc>OH <Home>
+    map! <Esc>OH <Home>
+    map <Esc>OF <End>
+    map! <Esc>OF <End>
+endif
+
 " search for tags all the way up to /
 set tags=tags;/
 
