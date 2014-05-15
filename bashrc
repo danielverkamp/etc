@@ -1,5 +1,21 @@
 # .bashrc
 
+SYSTEM=$(uname -s 2> /dev/null)
+case "$SYSTEM" in
+    CYGWIN*)
+        SYSTEM=cygwin
+        ;;
+    MINGW*|MSYS*)
+        SYSTEM=msys
+        ;;
+    Linux*)
+        SYSTEM=linux
+        ;;
+    *)
+        SYSTEM=unknown
+        ;;
+esac
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -86,7 +102,7 @@ function interactive ()
 
     # special case: mingw "dumb" terminal can still set title
     # set TERM to mingw-dumb for now to indicate this and put it back later
-    if [ "$TERM" = "dumb" -a "$MSYSTEM" = "MINGW32" ]; then
+    if [ "$TERM" = "dumb" -a "$SYSTEM" = "msys" ]; then
         TERM="mingw-dumb"
     fi
 
@@ -141,13 +157,14 @@ function interactive ()
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
 
-    if [ "$MSYSTEM" == "MINGW32" ]; then
-        alias clear='clsb'
-    fi
-
-    if [[ $(uname -s) = CYGWIN* ]]; then
-        alias start=cygstart
-    fi
+    case "$SYSTEM" in
+        msys)
+            alias clear=clsb
+            ;;
+        cygwin)
+            alias start=cygstart
+            ;;
+    esac
 }
 
 # call the function defined above
