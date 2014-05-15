@@ -164,6 +164,9 @@ function interactive ()
         cygwin)
             alias start=cygstart
             ;;
+        linux)
+            alias start=xdg-open
+            ;;
     esac
 }
 
