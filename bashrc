@@ -69,6 +69,10 @@ ulimit -c unlimited
 export EDITOR=vim
 export PAGER=less
 
+if [ -f ~/etc/git-completion.bash ]; then
+    . ~/etc/git-completion.bash
+fi
+
 # -----------------------------
 
 # put everything inside a function so variables don't unintentionally leak
