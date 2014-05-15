@@ -50,6 +50,9 @@ ulimit -c unlimited
 #[ -z "$PS1" ] && return
 [[ $- != *i* ]] && return
 
+export EDITOR=vim
+export PAGER=less
+
 # -----------------------------
 
 # put everything inside a function so variables don't unintentionally leak
