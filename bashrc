@@ -142,6 +142,9 @@ function interactive ()
         alias clear='clsb'
     fi
 
+    if [[ $(uname -s) = CYGWIN* ]]; then
+        alias start=cygstart
+    fi
 }
 
 # call the function defined above
