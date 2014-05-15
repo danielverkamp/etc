@@ -41,12 +41,6 @@ set completion-query-items 1000
 "\eOF":         end-of-line
 "\e[F":         end-of-line
 
-# page up
-"\e[5~":        beginning-of-history
-
-# page down
-"\e[6~":        end-of-history
-
 # Del
 "\e[3~":        delete-char
 
