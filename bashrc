@@ -68,7 +68,7 @@ ulimit -c unlimited
 
 export EDITOR=vim
 export PAGER=less
-export LESS='-M'
+export LESS='-M -R'
 
 if [ -f ~/etc/git-completion.bash ]; then
     . ~/etc/git-completion.bash
