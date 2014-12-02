@@ -27,6 +27,7 @@ map="
     screenrc:.screenrc
     startxwinrc:.startxwinrc
     tmux.conf:.tmux.conf
+    user-dirs.dirs:.config/user-dirs.dirs
     vimrc:.vimrc
     Xresources:.Xresources
     "
@@ -38,6 +39,15 @@ for f in $map; do
     if [ ! -f "$src" ]; then
         echo ERROR: Missing source file $src - exiting.
         exit 1
+    fi
+
+    dstdir=$(dirname "$dst")
+    if [ "x$dstdir" != "x." -a ! -d "$dstdir" ]; then
+        mkdir -p "$dstdir"
+        if [ $? -ne 0 ]; then
+            echo "ERROR: failed to make $dstdir"
+            exit 1
+        fi
     fi
 
     if [ -f "$dst" -a ! -L "$dst" ]; then

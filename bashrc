@@ -74,6 +74,22 @@ if [ -f ~/etc/git-completion.bash ]; then
     . ~/etc/git-completion.bash
 fi
 
+# set XDG Base Directory vars if not provided by session
+if [ -z "$XDG_DATA_HOME" ]; then
+    if [ "$SYSTEM" = "cygwin" -o "$SYSTEM" = "msys" ]; then
+        export XDG_DATA_HOME="$HOME/AppData/Roaming"
+    else
+        export XDG_DATA_HOME="$HOME/appdata"
+    fi
+    [ -d "$XDG_DATA_HOME" ] || mkdir "$XDG_DATA_HOME"
+fi
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    export XDG_CONFIG_HOME="$HOME/.config"
+    [ -d "$XDG_CONFIG_HOME" ] || mkdir "$XDG_CONFIG_HOME"
+fi
+
+test -f "$XDG_CONFIG_HOME/user-dirs.dirs" && source "$XDG_CONFIG_HOME/user-dirs.dirs"
+
 # -----------------------------
 
 # put everything inside a function so variables don't unintentionally leak
