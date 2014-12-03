@@ -25,8 +25,14 @@ xterm*allowBoldFonts: false
 xterm*boldColors: true
 xterm*cursorBlink: true
 
-! override Ctrl-Backspace so it sends Ctrl-W
-XTerm.VT100.translations: #override Ctrl <KeyPress> BackSpace: string(0x17)
+! XTerm key bindings:
+! - Ctrl-Backspace sends Ctrl-W
+! - copy selected text to both PRIMARY and CLIPBOARD
+! - paste from PRIMARY or CLIPBOARD in that order
+XTerm.VT100.translations: #override \n\
+    Ctrl <KeyPress> BackSpace: string(0x17) \n\
+    <BtnUp>: select-end(PRIMARY, CLIPBOARD) \n\
+    ~Ctrl ~Meta <Btn2Up>:insert-selection(PRIMARY, CLIPBOARD)
 
 ! xterm colors
 xterm*colorBDMode: true
