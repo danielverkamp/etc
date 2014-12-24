@@ -199,6 +199,10 @@ function interactive ()
             alias start=xdg-open
             ;;
     esac
+
+    if [ ! -z "$DISPLAY" ]; then
+        xset b off &> /dev/null
+    fi
 }
 
 # call the function defined above
