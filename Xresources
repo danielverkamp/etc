@@ -12,7 +12,7 @@ URxvt.cursorBlink: true
 ! xterm
 xterm*termName: xterm-256color
 xterm*faceName: Bitstream Vera Sans Mono
-xterm*faceSize: 10
+xterm*faceSize: 11
 xterm*renderFont: true
 xterm*vt100*geometry: 80x25
 xterm*saveLines: 12000
