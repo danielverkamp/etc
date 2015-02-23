@@ -178,6 +178,8 @@ function interactive ()
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
 
+    alias hex='xxd -g 1 -u'
+
     case "$SYSTEM" in
         msys)
             alias clear=clsb
