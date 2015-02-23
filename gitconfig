@@ -6,5 +6,8 @@
 	diff = auto
 	status = auto
 
+[alias]
+	mrclean = clean -d -x
+
 [include]
 	path = ~/.gitconfig.site
