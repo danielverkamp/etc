@@ -21,6 +21,11 @@ set softtabstop=4
 :noremap <a-left> :wincmd h<cr>
 :noremap <a-right> :wincmd l<cr>
 
+" Ctrl-Backspace: delete word left
+:imap <C-BS> <C-W>
+" Ctrl-Delete: delete word right
+:imap <C-Del> <C-O>dw
+
 function! SetTabType()
     " any line beginning with a tab?
     if search('^\t', 'nw') != 0
@@ -63,12 +68,45 @@ let &t_Co=256
 let &t_AF="\e[38;5;%dm"
 let &t_AB="\e[48;5;%dm"
 
-" fix tmux home/end keys
+" fix tmux keys
+" TODO: this is probably fallout from setting xterm-keys in tmux.conf, since
+" terminfo should already have mapped the keys...
 if $TERM =~ '^screen-256color'
     map <Esc>OH <Home>
     map! <Esc>OH <Home>
+
     map <Esc>OF <End>
     map! <Esc>OF <End>
+
+    map <Esc>[1;5H <C-Home>
+    map! <Esc>[1;5H <C-Home>
+
+    map <Esc>[1;5F <C-End>
+    map! <Esc>[1;5F <C-End>
+
+    map <Esc>[1;5C <C-Right>
+    map! <Esc>[1;5C <C-Right>
+
+    map <Esc>[1;5D <C-Left>
+    map! <Esc>[1;5D <C-Left>
+
+    map <Esc>[1;5A <C-Up>
+    map! <Esc>[1;5A <C-Up>
+
+    map <Esc>[1;5B <C-Down>
+    map! <Esc>[1;5B <C-Down>
+
+    map <Esc>[5;5~ <C-PageUp>
+    map! <Esc>[5;5~ <C-PageUp>
+
+    map <Esc>[6;5~ <C-PageDown>
+    map! <Esc>[6;5~ <C-PageDown>
+
+    map <Esc>[3;5~ <C-Del>
+    map! <Esc>[3;5~ <C-Del>
+
+    map <C-_> <C-BS>
+    map! <C-_> <C-BS>
 endif
 
 " search for tags all the way up to /
