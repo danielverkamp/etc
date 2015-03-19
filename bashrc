@@ -181,7 +181,9 @@ function interactive ()
     export HISTCONTROL=ignoredups
 
     # use color when available
-    alias ls='ls --color=auto'
+    if ls --color=auto &> /dev/null; then
+        alias ls='ls --color=auto'
+    fi
     alias grep='grep --color=auto'
 
     alias hex='xxd -g 1 -u'
