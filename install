@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 NOLINK=0
 uname -s | grep MINGW &>/dev/null && NOLINK=1
