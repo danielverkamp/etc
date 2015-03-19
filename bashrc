@@ -44,6 +44,8 @@ pathadd "$HOME/src/go/bin"
 pathadd "/sbin"
 pathadd "/usr/sbin"
 
+unset pathadd
+
 [ -d "$HOME/src/go" ] && export GOPATH="$HOME/src/go"
 
 unset TMP
@@ -149,6 +151,7 @@ function interactive ()
 
     PS1="\[${PS1_TITLE}\]\n${HOSTCOLOR}\\h${COLOR_RESET}${FG_WHITE}\`if [[ \$? -eq 0 ]]; then echo ':'; else echo '${BG_RED}!${COLOR_RESET}'; fi\`${FG_YELLOW_B}\\w\n${FG_GREEN_B}\\\$${COLOR_RESET} "
     export PS1
+    unset HOSTCOLOR
 
     # executing a dir name will cd to it
     shopt -s autocd &> /dev/null
