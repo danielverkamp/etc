@@ -11,6 +11,9 @@ case "$SYSTEM" in
     Linux*)
         SYSTEM=linux
         ;;
+    FreeBSD)
+        SYSTEM=freebsd
+        ;;
     *)
         SYSTEM=unknown
         ;;
