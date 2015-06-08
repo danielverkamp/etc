@@ -9,5 +9,8 @@
 [alias]
 	mrclean = clean -d -x
 
+[diff]
+	renames = copy
+
 [include]
 	path = ~/.gitconfig.site
