@@ -12,6 +12,9 @@ set linebreak
 " make backspace eat 4 spaces
 set softtabstop=4
 
+" disable intro screen
+set shortmess=I
+
 " Ctrl-w: toggle word wrap
 :noremap <c-w> :set wrap!<cr>
 
