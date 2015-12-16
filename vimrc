@@ -34,8 +34,21 @@ function! SetTabType()
     if search('^\t', 'nw') != 0
         " disable et
         set noexpandtab
+        set shiftwidth=8 tabstop=8 softtabstop=8
         " highlight spaces used for indentation
         :2match ExtraWhitespace2 /^\zs  \+/
+    elseif search('^  [^ ]', 'nw') != 0
+        set expandtab
+        set shiftwidth=2 tabstop=2 softtabstop=2
+    elseif search('^   [^ ]', 'nw') != 0
+        set expandtab
+        set shiftwidth=3 tabstop=3 softtabstop=3
+    elseif search('^    [^ ]', 'nw') != 0
+        set expandtab
+        set shiftwidth=4 tabstop=4 softtabstop=4
+    elseif search('^        [^ ]', 'nw') != 0
+        set expandtab
+        set shiftwidth=8 tabstop=8 softtabstop=8
     endif
 endfunction
 
