@@ -4,13 +4,13 @@
 set nocp
 set backspace=2
 
-set sw=4 ts=4 autoindent nowrap
+set sw=8 ts=8 autoindent nowrap
 set expandtab
 
 set linebreak
 
-" make backspace eat 4 spaces
-set softtabstop=4
+" make backspace eat 8 spaces
+set softtabstop=8
 
 " disable intro screen
 set shortmess=I
