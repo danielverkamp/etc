@@ -12,5 +12,8 @@
 [diff]
 	renames = copy
 
+[push]
+	default = simple
+
 [include]
 	path = ~/.gitconfig.site
