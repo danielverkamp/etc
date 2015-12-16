@@ -43,6 +43,9 @@ if has("autocmd")
     " enable file type detection and indentation
     filetype plugin indent on
     autocmd BufRead * call SetTabType()
+
+    " force indentation style for Python
+    autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 endif
 
 " detect Make.config as Makefile
