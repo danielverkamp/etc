@@ -1,2 +1,5 @@
 [extensions]
 pager =
+
+[ui]
+username = Daniel Verkamp <daniel@drv.nu>
