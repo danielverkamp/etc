@@ -11,7 +11,7 @@ URxvt.cursorBlink: true
 
 ! xterm
 xterm*termName: xterm-256color
-xterm*faceName: Bitstream Vera Sans Mono
+xterm*faceName: DejaVu Sans Mono
 xterm*faceNameDoublesize: Droid Sans Fallback
 xterm*faceSize: 11
 xterm*renderFont: true
