@@ -203,6 +203,9 @@ function interactive ()
     if [ ! -z "$DISPLAY" ]; then
         xset b off &> /dev/null
     fi
+
+    # turn off hover scrollbars
+    export GTK_OVERLAY_SCROLLING=0
 }
 
 # call the function defined above

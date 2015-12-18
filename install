@@ -22,6 +22,7 @@ map="
     fonts.conf:.config/fontconfig/fonts.conf
     gdbinit:.gdbinit
     gitconfig:.gitconfig
+    gtk.css:.config/gtk-3.0/gtk.css
     hgrc:.hgrc
     inputrc:.inputrc
     minttyrc:.minttyrc

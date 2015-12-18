@@ -1,0 +1,11 @@
+GtkToolbar {
+        padding: 1px;
+}
+
+GtkButton {
+        padding: 4px;
+}
+
+GtkComboBox GtkToggleButton {
+        padding: 2px;
+}
