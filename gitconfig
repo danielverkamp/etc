@@ -15,5 +15,8 @@
 [push]
 	default = simple
 
+[format]
+	pretty = fuller
+
 [include]
 	path = ~/.gitconfig.site
