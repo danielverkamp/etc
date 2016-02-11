@@ -28,7 +28,7 @@ set show-all-if-ambiguous on
 # only ask y/n for really big lists
 set completion-query-items 1000
 
-set enable-keypad on
+#set enable-keypad on
 
 # ---------- keybindings
 
