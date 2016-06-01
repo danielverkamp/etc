@@ -159,7 +159,7 @@ set statusline+=%1*%r%* " read-only flag
 
 set statusline+=\ %= " right align
 
-set statusline+=[%{&et?'spc':'tab'}]
+set statusline+=[%{&et?&sw.'spc':'tab'}]
 set statusline+=%{strlen(&fenc)?'['.&fenc.']':''} " encoding
 set statusline+=%1*%{&ff!='unix'?'['.&ff.']':''}%* " file format
 
