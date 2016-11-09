@@ -49,6 +49,7 @@ set completion-query-items 1000
 # Ctrl-Backspace
 "\C-?":         backward-kill-word
 "\C-_":         backward-kill-word
+"\C-H":         backward-kill-word
 
 # Ctrl-Delete
 "\e[3;5~":      kill-word
