@@ -9,3 +9,8 @@ GtkButton {
 GtkComboBox GtkToggleButton {
         padding: 2px;
 }
+
+/* Disable overlay scrollbar dotted line */
+undershoot.top, undershoot.right, undershoot.bottom, undershoot.left {
+        background-image: none;
+}
