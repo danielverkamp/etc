@@ -10,6 +10,11 @@ case "$SYSTEM" in
         ;;
     Linux*)
         SYSTEM=linux
+        case "$(uname -r)" in
+            *-Microsoft*)
+                SYSTEM_VARIANT=wsl
+                ;;
+        esac
         ;;
     FreeBSD)
         SYSTEM=freebsd
@@ -196,7 +201,11 @@ function interactive ()
             alias start=cygstart
             ;;
         linux)
-            alias start=xdg-open
+            if [ "$SYSTEM_VARIANT" = 'wsl' ]; then
+                alias start='cmd.exe /c start'
+            else
+                alias start=xdg-open
+            fi
             ;;
     esac
 
