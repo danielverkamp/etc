@@ -62,6 +62,9 @@ if has("autocmd")
 
     " force indentation style for Python
     autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+    " make visualbell do nothing
+    autocmd GUIEnter * set visualbell t_vb=
 endif
 
 " detect Make.config as Makefile
