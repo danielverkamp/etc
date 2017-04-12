@@ -16,7 +16,7 @@ set softtabstop=8
 set shortmess=I
 
 " stop *beeping* beeping
-set visualbell
+set visualbell t_vb=
 
 " Ctrl-w: toggle word wrap
 :noremap <c-w> :set wrap!<cr>
