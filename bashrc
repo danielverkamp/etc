@@ -223,3 +223,5 @@ interactive
 # remove it
 unset interactive
 
+# turn off stupid command not found handler some distros add
+unset command_not_found_handle
