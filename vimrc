@@ -15,6 +15,9 @@ set softtabstop=8
 " disable intro screen
 set shortmess=I
 
+" stop *beeping* beeping
+set visualbell
+
 " Ctrl-w: toggle word wrap
 :noremap <c-w> :set wrap!<cr>
 
