@@ -96,7 +96,7 @@ let &t_AB="\e[48;5;%dm"
 " fix tmux keys
 " TODO: this is probably fallout from setting xterm-keys in tmux.conf, since
 " terminfo should already have mapped the keys...
-if $TERM =~ '^screen-256color'
+if $TERM =~ '^screen-256color' || $TERM =~ '^tmux'
     map <Esc>OH <Home>
     map! <Esc>OH <Home>
 
