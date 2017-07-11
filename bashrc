@@ -79,6 +79,7 @@ ulimit -c unlimited
 export EDITOR=vim
 export PAGER=less
 export LESS='-M -R'
+export MANOPT='--no-hyphenation --no-justification'
 
 if [ -f ~/etc/git-completion.bash ]; then
     . ~/etc/git-completion.bash
