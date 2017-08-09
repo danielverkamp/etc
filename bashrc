@@ -67,7 +67,7 @@ else
     export TEMP=~/temp
 fi
 
-umask 027
+umask 022
 
 # enable core dumps
 ulimit -c unlimited
