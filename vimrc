@@ -94,15 +94,16 @@ syntax on
 ":set mouse=a
 
 " force-enable 256 color mode
-" (TODO: only do this when TERM=~-256color)
-let &t_Co=256
-let &t_AF="\e[38;5;%dm"
-let &t_AB="\e[48;5;%dm"
+if $TERM =~ '-256color$'
+    let &t_Co=256
+    let &t_AF="\e[38;5;%dm"
+    let &t_AB="\e[48;5;%dm"
+endif
 
 " fix tmux keys
 " TODO: this is probably fallout from setting xterm-keys in tmux.conf, since
 " terminfo should already have mapped the keys...
-if $TERM =~ '^screen-256color' || $TERM =~ '^tmux'
+if $TERM =~ '^screen' || $TERM =~ '^tmux'
     map <Esc>OH <Home>
     map! <Esc>OH <Home>
 
