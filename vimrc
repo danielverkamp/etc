@@ -32,6 +32,12 @@ set visualbell t_vb=
 " Ctrl-Delete: delete word right
 :imap <C-Del> <C-O>dw
 
+" Ctrl-Up/Down: paragraph up/down
+:map <C-Up> {
+:map <C-Down> }
+:imap <C-Up> <C-O>{
+:imap <C-Down> <C-O>}
+
 function! SetTabType()
     " any line beginning with a tab?
     if search('^\t', 'nw') != 0
