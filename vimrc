@@ -44,20 +44,28 @@ function! SetTabType()
         " disable et
         set noexpandtab
         set shiftwidth=8 tabstop=8 softtabstop=8
-        " highlight spaces used for indentation
-        :2match ExtraWhitespace2 /^\zs  \+/
+        " highlight spaces used for indentation, >=8 consecutive spaces
+        :2match ExtraWhitespace2 /^\zs  \+\| \{8,\}/
     elseif search('^  [^ ]', 'nw') != 0
         set expandtab
         set shiftwidth=2 tabstop=2 softtabstop=2
+        " highlight tabs anywhere
+        :2match ExtraWhitespace2 /\t/
     elseif search('^   [^ ]', 'nw') != 0
         set expandtab
         set shiftwidth=3 tabstop=3 softtabstop=3
+        " highlight tabs anywhere
+        :2match ExtraWhitespace2 /\t/
     elseif search('^    [^ ]', 'nw') != 0
         set expandtab
         set shiftwidth=4 tabstop=4 softtabstop=4
+        " highlight tabs anywhere
+        :2match ExtraWhitespace2 /\t/
     elseif search('^        [^ ]', 'nw') != 0
-        set expandtab
+        iset expandtab
         set shiftwidth=8 tabstop=8 softtabstop=8
+        " highlight tabs anywhere
+        :2match ExtraWhitespace2 /\t/
     endif
 endfunction
 
@@ -155,7 +163,7 @@ set hlsearch
 
 :highlight ExtraWhitespace ctermbg=red
 :highlight ExtraWhitespace2 ctermbg=red
-:match ExtraWhitespace /\s\+$\| \+\ze\t\|[^\t]\zs\t\+/ " trailing whitespace, spaces before tab, tabs not at beginning of line
+:match ExtraWhitespace /\s\+$\| \+\ze\t/ " trailing whitespace, spaces before tab
 
 
 hi statusline cterm=none ctermbg=darkblue ctermfg=white
