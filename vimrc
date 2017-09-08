@@ -62,7 +62,7 @@ function! SetTabType()
         " highlight tabs anywhere
         :2match ExtraWhitespace2 /\t/
     elseif search('^        [^ ]', 'nw') != 0
-        iset expandtab
+        set expandtab
         set shiftwidth=8 tabstop=8 softtabstop=8
         " highlight tabs anywhere
         :2match ExtraWhitespace2 /\t/
