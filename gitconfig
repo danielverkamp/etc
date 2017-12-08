@@ -2,7 +2,7 @@
 	email = daniel@drv.nu
 	name = Daniel Verkamp
 [core]
-	pager = "less --tabs=1,9 -M -R"
+	pager = "less --tabs=1,9 -M -R -Q"
 
 [color]
 	diff = auto
