@@ -1,6 +1,8 @@
 [user]
 	email = daniel@drv.nu
 	name = Daniel Verkamp
+[core]
+	pager = "less --tabs=1,9 -M -R"
 
 [color]
 	diff = auto
@@ -8,6 +10,9 @@
 
 [alias]
 	mrclean = clean -d -x
+	tree = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --exclude=/origin/dev/* --branches=*
+	fixes = log -1 --abbrev=12 --format='Fixes: %h (\"%s\")'
+	hsow = show
 
 [diff]
 	renames = copy
