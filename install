@@ -33,6 +33,7 @@ map="
     tmux.conf:.tmux.conf
     user-dirs.dirs:.config/user-dirs.dirs
     vimrc:.vimrc
+    Xmodmap:.Xmodmap
     Xresources:.Xresources
     "
 

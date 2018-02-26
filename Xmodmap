@@ -1,0 +1,3 @@
+! Caps Lock -> dead_greek compose key (caps + p -> π, etc.)
+clear lock
+keycode 66 = dead_greek
