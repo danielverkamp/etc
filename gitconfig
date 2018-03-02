@@ -17,6 +17,9 @@
 [diff]
 	renames = copy
 
+[merge]
+	conflictStyle = diff3
+
 [push]
 	default = simple
 
