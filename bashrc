@@ -216,6 +216,10 @@ function interactive ()
 
     # turn off hover scrollbars
     export GTK_OVERLAY_SCROLLING=0
+
+    # stop annoying messages from GTK3 apps about accessibility bus
+    # https://bugs.launchpad.net/ubuntu/+source/at-spi2-core/+bug/1193236
+    export NO_AT_BRIDGE=1
 }
 
 # call the function defined above
