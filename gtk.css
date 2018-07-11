@@ -10,6 +10,28 @@ GtkComboBox GtkToggleButton {
         padding: 2px;
 }
 
+* {
+        -GtkScrollbar-has-backward-stepper: true;
+        -GtkScrollbar-has-forward-stepper: true;
+}
+
+scrollbar slider, scrollbar slider:hover {
+        min-width: 11px;
+        min-height: 11px;
+
+        border-radius: 0;
+
+        border-left: 1px solid @outset_lighter_color;
+        border-top: 1px solid @outset_lighter_color;
+        border-right: 1px solid @black_color;
+        border-bottom: 1px solid @black_color;
+
+}
+
+scrollbar.vertical slider {
+        min-height: 30px;
+}
+
 /* Disable overlay scrollbar dotted line */
 undershoot.top, undershoot.right, undershoot.bottom, undershoot.left {
         background-image: none;
