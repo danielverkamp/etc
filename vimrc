@@ -98,6 +98,9 @@ syntax on
 " line numbers on
 ":set number
 
+" disable mouse support
+:set mouse=""
+
 " mouse support
 ":set mouse=a
 
