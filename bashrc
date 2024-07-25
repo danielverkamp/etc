@@ -194,6 +194,8 @@ function interactive ()
 
     alias hex='xxd -g 1 -u'
 
+    alias df='df -x tmpfs -x devtmpfs -x efivarfs'
+
     case "$SYSTEM" in
         msys)
             alias clear=clsb
