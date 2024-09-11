@@ -26,6 +26,7 @@ map="
     gtk-settings.ini:.config/gtk-3.0/settings.ini
     hgrc:.hgrc
     inputrc:.inputrc
+    lldbinit:.lldbinit
     minttyrc:.minttyrc
     plan:.plan
     screenrc:.screenrc
