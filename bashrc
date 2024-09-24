@@ -192,7 +192,7 @@ function interactive ()
     fi
     alias grep='grep --color=auto'
 
-    alias hex='xxd -g 1 -u'
+    alias hex='xxd -a -g 1 -u -R always'
 
     alias df='df -x tmpfs -x devtmpfs -x efivarfs'
 
