@@ -26,5 +26,8 @@
 [format]
 	pretty = fuller
 
+[init]
+	defaultBranch = main
+
 [include]
 	path = ~/.gitconfig.site
