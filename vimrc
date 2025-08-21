@@ -18,6 +18,8 @@ set shortmess=I
 " stop *beeping* beeping
 set visualbell t_vb=
 
+set noshowcmd
+
 " Ctrl-w: toggle word wrap
 :noremap <c-w> :set wrap!<cr>
 
