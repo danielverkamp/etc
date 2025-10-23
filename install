@@ -28,6 +28,7 @@ map="
     inputrc:.inputrc
     lldbinit:.lldbinit
     minttyrc:.minttyrc
+    perfconfig:.perfconfig
     plan:.plan
     screenrc:.screenrc
     startxwinrc:.startxwinrc
